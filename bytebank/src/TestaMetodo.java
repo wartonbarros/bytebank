@@ -26,6 +26,10 @@ public class TestaMetodo {
 		} else {
 			System.out.println("faltou dinheiro");
 		}
+		
+		contaDoPaulo.titular = "Paulo Silveira";
+		System.out.println(contaDoPaulo.titular);
+		
 	}
 
 }
