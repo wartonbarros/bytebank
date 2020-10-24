@@ -1,6 +1,6 @@
 public class Conta {	
 	
-	double saldo; //atributos
+	private double saldo; //atributos
 	int agencia;
 	int numero;
 	Cliente titular;
@@ -28,6 +28,12 @@ public class Conta {
 		} else {
 			return false;
 		}
+	}
+	
+	public double getSaldo() {
+		
+		return this.saldo;
+		
 	}
 	
 }
