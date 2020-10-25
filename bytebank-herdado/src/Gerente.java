@@ -1,67 +1,25 @@
-// extends faz a classe gerente herdar os atributos da classe Funcionario, = herança, e assina o contrato Autenticavel
+//Gerente eh um Funcionario, Gerente herda da class Funcionario, assina o contrato Autenticavel, eh um Autenticavel
 public class Gerente extends Funcionario implements Autenticavel{
 	
-	// inicio atributos
-	
-	private int senha; // inicializa automaticamente com 0
-	
-	// fim atributos
-	
-	
-	
-	// inicio construtor
-	
-	public Gerente() { // o construtor não retorna nada
-		
-		
-		
+	private AutenticacaoUtil autenticador;
+
+	public Gerente() {
+		this.autenticador = new AutenticacaoUtil();
 	}
 	
-	// fim construtor
-	
-	
-	
-	// inicio metodos
-	
-	
-	
-	public double getBonificacao() { //método reescrito da classe mãe
-		System.out.println("Chamando o método de bonificacao do Gerente");
-		return super.getSalario(); //super indica que o atributo salário e o método getBonificacao são da classe mãe
-		
-	} // em vez de deixar atributos não privados na classe mãe, e acessa-los diretamente, melhor acessa-los sempre por métodos
+	public double getBonificacao() {
+		System.out.println("Chamando o método de bonificacao do GERENTE");
+		return super.getSalario();
+	}
 
-	
-	
-	// métodos da interface Autentica
 	@Override
 	public void setSenha(int senha) {
-		this.senha = senha;
+		this.autenticador.setSenha(senha);
 	}
 
 	@Override
 	public boolean autentica(int senha) {
-		if(this.senha == senha) {
-			return true;
-		} else {
-			return false;
-		}
+		return this.autenticador.autentica(senha);
 	}
-	// fim métodos da interface autentica
-	
-	
-	
-	
-	// fim metodos
-	
-	
-	
-	
-	
-	// inicio getters e setters
-	
-	
-	
-	// fim getters e setters
 
 }

@@ -1,45 +1,13 @@
 
-public abstract class Funcionario { // abstract torna a classe abstrata, não podendo instanciar objetos a partir dela
-	
-	
-	// inicio atributos
-	
-	// modificadores de visibilidade, public = visível para todas as classes, protected = visível para as classes 
-	// filhas, private, visível apenas para a classe
+//nao pode instanciar dessa classe, pq é abstrata
+public abstract class Funcionario {
 	
 	private String nome;
 	private String cpf;
-//	protected double salario; // protected está entre public e private, e significa publico para os filhos
 	private double salario;
 	
-	
-	// fim atributos
-	
-	
-	
-	// inicio construtor
-	
-	public Funcionario() { // o construtor não retorna nada
-		
-		
-		
-	}
-	
-	// fim construtor
-	
-	
-	
-	// inicio metodos
-	
-	public abstract double getBonificacao(); // método sem implementação padrão; abstract = método sem corpo
-	
-	// fim metodos
-	
-	
-	
-	
-	
-	// inicio getters e setters
+	//metodo sem corpo, nao há implementacao
+	public abstract double getBonificacao();
 	
 	public String getNome() {
 		return nome;
@@ -60,6 +28,7 @@ public abstract class Funcionario { // abstract torna a classe abstrata, não po
 		this.salario = salario;
 	}
 	
-	// fim getters e setters
+	
+	
 
 }
