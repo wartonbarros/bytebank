@@ -1,5 +1,6 @@
 
-public class Funcionario {
+public abstract class Funcionario { // abstract torna a classe abstrata, não podendo instanciar objetos a partir dela
+	
 	
 	// inicio atributos
 	
@@ -30,9 +31,7 @@ public class Funcionario {
 	
 	// inicio metodos
 	
-	public double getBonificacao() {
-		return this.salario * 0.05;
-	}
+	public abstract double getBonificacao(); // método sem implementação padrão; abstract = método sem corpo
 	
 	// fim metodos
 	

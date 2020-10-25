@@ -20,7 +20,7 @@ public class EditorVideo extends Funcionario {
 	
 	public double getBonificacao() { //método reescrito da classe mãe
 		System.out.println("Chamando o método de bonificacao do Editor de Video");
-		return super.getBonificacao() + 100; //super indica que o atributo salário e o método getBonificacao são da classe mãe
+		return 150; //super indica que o atributo salário e o método getBonificacao são da classe mãe
 		
 	} // em vez de deixar atributos não privados na classe mãe, e acessa-los diretamente, melhor acessa-los sempre por métodos
 	

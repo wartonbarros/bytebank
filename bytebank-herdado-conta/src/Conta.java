@@ -1,6 +1,6 @@
-public class Conta {	
+public abstract class Conta {	// abstract = ninguém pode instanciar objetos da classe conta
 	
-	private double saldo; //atributos
+	protected double saldo; //atributos
 	private int agencia;
 	private int numero;
 	private Cliente titular;
@@ -23,11 +23,8 @@ public class Conta {
 	
 	// início métodos 
 	
-	public void deposita(double valor) { //metódo deposita
+	public abstract void deposita(double valor); //metódo deposita, abstract, terá que ser implementado nas classes filhas
 		
-		this.saldo = this.saldo + valor;
-		
-	}
 	
 	public boolean saca(double valor) {
 		if(this.saldo >= valor) {
