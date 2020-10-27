@@ -1,5 +1,5 @@
 
-public class Fluxo {
+public class FluxoComError {
 	
 	public static void main(String[] args) {
         System.out.println("Ini do main");
@@ -12,7 +12,7 @@ public class Fluxo {
         
         } 
         
-        catch(Exception ex) { // catch = pegar, pega o erro para tratar, no caso ArithmeticException
+        catch(ArithmeticException | NullPointerException ex) { // catch = pegar, pega o erro para tratar, no caso ArithmeticException
         	String msg = ex.getMessage(); // getMessage é um método da referência ArithmeticException
         	System.out.println("Exception " + msg);
 			ex.printStackTrace(); // imprimir rastro da pilha
@@ -26,7 +26,7 @@ public class Fluxo {
 
 	
 	
-    private static void metodo1() throws MinhaExcecao{
+    private static void metodo1() {
         System.out.println("Ini do metodo1");
         metodo2();
         System.out.println("Fim do metodo1");
@@ -34,16 +34,11 @@ public class Fluxo {
 
     
     
-    private static void metodo2() throws MinhaExcecao{
-        System.out.println("Ini do metodo2");
-        
-//        ArithmeticException ex = new ArithmeticException("deu errado");
-//        throw ex; // jogando objeto ArithmeticException na pilha 
-        throw new MinhaExcecao("deu muito errado");
-        
-        
-        
-//        System.out.println("Fim do metodo2");
+    private static void metodo2() {
+    	System.out.println("ini método 2");
+        metodo2();
+    	System.out.println("fim método 2");
+
     }
 
 }
